@@ -4,14 +4,13 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, Application, CommandHandler, ContextTypes, MessageHandler, CallbackQueryHandler, filters
 from log import logger
 
-allowed_user_list = ["riverfjs", "victorwangkai"]
 config = configparser.ConfigParser()
 config.read('config.ini', encoding='utf-8')
 
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # """Send a message when the command /help is issued."""
-    await update.message.reply_text("你好, {}, 请选择左下角菜单开始使用！喵~".format(update.message.from_user["first_name"]))
+    await update.message.reply_text("你好, {}".format(update.message.from_user["first_name"]))
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
