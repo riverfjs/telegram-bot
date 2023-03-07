@@ -47,4 +47,8 @@ app.add_handler(CommandHandler("add", add))
 # app.add_handler(CommandHandler("startchat", start_chat))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 # app.run_polling()
-app.run_webhook(webhook_url="https://comp7940.azurewebsites.net/")
+app.run_webhook(
+    listen="0.0.0.0",
+    port=8000,
+    webhook_url="https://comp7940.azurewebsites.net/"
+)
